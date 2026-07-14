@@ -1,0 +1,91 @@
+{
+  "asOf": "2026/07/13",
+  "index": 46500,
+  "pe": 31.3,
+  "intro": "進場前，先知道自己站在哪裡。這一頁只描述位置、不預測方向——假設是你自己的，這裡只提供數學。",
+  "indicators": [
+    {
+      "id": "pe",
+      "label": "大盤本益比",
+      "value": 31.3,
+      "unit": "倍",
+      "scaleMin": 8,
+      "scaleMax": 40,
+      "bandLow": 13,
+      "bandHigh": 23,
+      "bandLabel": "歷史區間 13–23 倍",
+      "note": "市場為每 1 元獲利出價 31 元，已超出二十年歷史區間上緣 36%。獲利完全不變下，回到上緣 23 倍等於 -26%、回到中樞 18 倍等於 -42%——這是「倍數正常化」的代價，與獲利衰退無關。"
+    },
+    {
+      "id": "pb",
+      "label": "大盤股價淨值比",
+      "value": 4.34,
+      "unit": "倍",
+      "scaleMin": 0.8,
+      "scaleMax": 5.5,
+      "bandLow": 1.2,
+      "bandHigh": 2.4,
+      "bandLabel": "歷史區間約 1.2–2.4 倍",
+      "note": "接近歷史上緣的兩倍。參考座標：1990 年萬點泡沫頂點約 5–6 倍。淨值比對「獲利暴增」的解釋力較低，所以它比本益比更誠實地顯示出價有多滿。"
+    },
+    {
+      "id": "tsmc",
+      "label": "台積電佔大盤權重",
+      "value": 42,
+      "unit": "%",
+      "scaleMin": 0,
+      "scaleMax": 50,
+      "bandLow": 20,
+      "bandHigh": 30,
+      "bandLabel": "近十年常態約 20–30%",
+      "note": "前十大權值股合計 61%，幾乎全是 AI 供應鏈。「大盤合不合理」實質上已退化成單一問題：AI 資本支出還能高速成長幾年。指數投資的分散效果，正在被單一敘事稀釋。"
+    },
+    {
+      "id": "margin",
+      "label": "上市融資餘額",
+      "value": 6117,
+      "unit": "億",
+      "scaleMin": 1000,
+      "scaleMax": 7000,
+      "bandLow": 1500,
+      "bandHigh": 3300,
+      "bandLabel": "近十年常態約 1,500–3,300 億",
+      "note": "11 個月暴增 164%（2,313 → 6,117 億）創歷史新高，6 月違約交割金額同創新高。散戶槓桿在多頭後段才達到高峰——因為需要幾年的「別人都賺錢」才能說服最保守的人下場。這個訊號在七場泡沫裡出現過七次。"
+    }
+  ],
+  "checklist": [
+    {
+      "question": "新敘事是什麼",
+      "status": "on",
+      "text": "AI——而且是真的：台積電、鴻海獲利都創歷史新高。但記住達康的課：敘事為真，價格仍可以錯。"
+    },
+    {
+      "question": "錢從哪來（槓桿）",
+      "status": "on",
+      "text": "融資餘額 11 個月 +164% 創新高，信貸與理財型房貸進場的部分甚至不在統計裡——藏起來的槓桿在崩的時候才現形。"
+    },
+    {
+      "question": "估值多誇張",
+      "status": "half",
+      "text": "本益比 31 倍超出歷史區間、淨值比近上緣兩倍——高，但遠不是 1990 年的 100 倍本益比。E（獲利）確實在爆發，撐住了一半的漲幅。"
+    },
+    {
+      "question": "新估值理論出現了嗎",
+      "status": "half",
+      "text": "「AI 超級週期」「這次不一樣」的語言開始變多，但台積電本身仍撐得住傳統估值——極端訊號是「舊的尺被丟掉」，目前還沒到。"
+    },
+    {
+      "question": "反身性迴圈",
+      "status": "on",
+      "text": "ETF 資金潮、媒體造神、賺錢效應吸引開戶潮——迴圈運轉中。注意：反身性正著轉的時候，看起來就是「大家都對」。"
+    }
+  ],
+  "checklistNote": "五問中三個半亮燈——特徵比較像多頭的中後段而非早段。但這不是時點預測：1998 到 2000 年，最瘋狂的漲幅發生在最後 18 個月。溫度計告訴你水多熱，不告訴你何時沸騰。",
+  "sources": [
+    { "label": "財報狗：台股大盤本益比與股價淨值比", "url": "https://statementdog.com/taiex" },
+    { "label": "MacroMicro：台股大盤本益比長期區間 13–23 倍", "url": "https://en.macromicro.me/charts/133792/shang-shi-da-pan-PE-bi-tai-gu-da-pan-ji-shi-ji-li-shi-ben-yi-bi-zhang-qi-qu-jian-13-bei" },
+    { "label": "期交所：加權指數成分股市值比重", "url": "https://www.taifex.com.tw/cht/2/weightedPropertion" },
+    { "label": "Business Insider Taiwan：融資餘額 11 個月暴增 164%、違約交割創高", "url": "https://www.businessinsider.tw/article/4257" },
+    { "label": "經濟日報：融資餘額破紀錄", "url": "https://money.udn.com/money/story/5607/9581922" }
+  ]
+}

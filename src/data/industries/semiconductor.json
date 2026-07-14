@@ -1,0 +1,99 @@
+{
+  "id": "semiconductor",
+  "name": "半導體",
+  "oneLiner": "全世界的電子產品都需要晶片，而台灣掌握了製造環節的關鍵位置",
+  "dataNote": "毛利率為 2025 年約略值，用來理解商業模式，非即時選股數據",
+  "stages": [
+    {
+      "id": "design",
+      "name": "IC 設計",
+      "tier": "上游",
+      "role": "畫出晶片的設計藍圖，賣的是智慧財產",
+      "howTheyEarn": "把設計好的晶片委託代工廠製造，再以自有品牌賣給下游客戶。自己沒有工廠（Fabless），最大成本是研發人才，而不是設備。",
+      "marginStory": "毛利率普遍 35–50%。因為賣的是「設計能力」這種無形資產，複製一顆晶片的邊際成本很低；但研發費用極高，設計失敗一個世代就可能掉隊。",
+      "companies": [
+        { "ticker": "2454", "name": "聯發科", "market": "TW", "grossMargin": 47, "note": "手機晶片全球前二，近年切入 AI 與車用" },
+        { "ticker": "2379", "name": "瑞昱", "market": "TW", "grossMargin": 50, "note": "網通晶片（俗稱螃蟹卡），品項極多" },
+        { "ticker": "3034", "name": "聯詠", "market": "TW", "grossMargin": 38, "note": "面板驅動 IC 龍頭" }
+      ],
+      "pos": { "x": 0, "y": 300 }
+    },
+    {
+      "id": "wafer",
+      "name": "矽晶圓材料",
+      "tier": "支援",
+      "role": "供應製造晶片用的矽晶圓基板",
+      "howTheyEarn": "把多晶矽提煉、拉晶、切片成標準規格的晶圓，長約合約賣給晶圓代工廠。是標準化材料生意，比的是良率、產能與長約價格。",
+      "marginStory": "毛利率約 20–35%，隨半導體景氣循環波動大。產品規格標準化、客戶議價力強，所以賺的是「規模與良率」的錢，不是技術溢價。",
+      "companies": [
+        { "ticker": "6488", "name": "環球晶", "market": "TW", "grossMargin": 31, "note": "全球第三大矽晶圓廠" },
+        { "ticker": "3532", "name": "台勝科", "market": "TW", "grossMargin": 22, "note": "12 吋晶圓，台塑集團與日本 SUMCO 合資" }
+      ],
+      "pos": { "x": 180, "y": 0 }
+    },
+    {
+      "id": "equipment",
+      "name": "設備供應",
+      "tier": "支援",
+      "role": "供應曝光機、蝕刻機等製造設備",
+      "howTheyEarn": "賣設備給晶圓廠，一台先進 EUV 曝光機要價超過 1.5 億美元；賣出後還有長期維護與零件收入，是「設備 + 售後服務」的雙引擎模式。",
+      "marginStory": "毛利率約 45–50%。技術門檻極高（EUV 全球只有 ASML 做得出來），近乎獨占，所以能收技術溢價。台股中較少此類公司，多為國外大廠。",
+      "companies": [
+        { "ticker": "ASML", "name": "艾司摩爾", "market": "US", "grossMargin": 51, "note": "EUV 曝光機全球獨家" },
+        { "ticker": "AMAT", "name": "應用材料", "market": "US", "grossMargin": 47, "note": "沉積、蝕刻設備龍頭" }
+      ],
+      "pos": { "x": 560, "y": 0 }
+    },
+    {
+      "id": "foundry",
+      "name": "晶圓代工",
+      "tier": "中游",
+      "role": "把設計藍圖做成實體晶片",
+      "howTheyEarn": "收 IC 設計公司的代工費。製程越先進（奈米數越小），單片晶圓收費越高；先進製程幾乎沒有對手時，就有極強的定價權。",
+      "marginStory": "台積電毛利率近 60%，聯電約 30%——差距就是「先進製程壟斷」的價值。這條供應鏈上最賺錢的台灣環節就在這裡：資本支出巨大（一座廠上百億美元），但築起的護城河也最深。",
+      "companies": [
+        { "ticker": "2330", "name": "台積電", "market": "TW", "grossMargin": 58, "note": "先進製程市占超過 9 成" },
+        { "ticker": "2303", "name": "聯電", "market": "TW", "grossMargin": 30, "note": "成熟製程為主，拚產能利用率" }
+      ],
+      "pos": { "x": 380, "y": 300 }
+    },
+    {
+      "id": "osat",
+      "name": "封裝測試",
+      "tier": "中游",
+      "role": "把裸晶片封裝保護、測試好壞",
+      "howTheyEarn": "按件收取封裝與測試的加工費。傳統上是勞力與設備密集的代工生意；近年先進封裝（如 CoWoS）因 AI 晶片需求變成新戰場。",
+      "marginStory": "毛利率約 15–35%，是這條鏈上偏低的環節——加工服務可替代性較高、議價力弱。這說明了一件事：同一條供應鏈，位置不同，賺錢的難易度天差地遠。",
+      "shift": {
+        "label": "議價力升級中",
+        "case": "3711",
+        "note": "AI 先進封裝（CoWoS 等）讓封測從「可替代的加工」變成瓶頸環節，2026 年封測廠首度全面漲價——供應鏈上的位置正在移動。"
+      },
+      "companies": [
+        { "ticker": "3711", "name": "日月光投控", "market": "TW", "grossMargin": 16, "note": "全球封測龍頭" },
+        { "ticker": "2449", "name": "京元電子", "market": "TW", "grossMargin": 35, "note": "測試為主，AI 晶片測試受惠者" }
+      ],
+      "pos": { "x": 760, "y": 300 }
+    },
+    {
+      "id": "brand",
+      "name": "品牌 / 終端客戶",
+      "tier": "下游",
+      "role": "把晶片變成產品賣給全世界",
+      "howTheyEarn": "設計終端產品（手機、顯卡、伺服器），掌握品牌與通路，直接面對消費者或企業收錢。整條供應鏈的錢，源頭都是他們的產品賣得出去。",
+      "marginStory": "NVIDIA 毛利率超過 70%，因為 AI 晶片供不應求又沒有替代品；Apple 約 46%，靠品牌與生態系。他們是台灣半導體業的大客戶——台股的營收，很大一部分取決於這些公司的產品週期。",
+      "companies": [
+        { "ticker": "NVDA", "name": "輝達", "market": "US", "grossMargin": 73, "note": "AI 晶片近乎獨占" },
+        { "ticker": "AAPL", "name": "蘋果", "market": "US", "grossMargin": 46, "note": "台積電最大單一客戶" }
+      ],
+      "pos": { "x": 1140, "y": 300 }
+    }
+  ],
+  "edges": [
+    { "from": "design", "to": "foundry", "fromHandle": "r", "toHandle": "l", "flow": "交付設計圖、支付代工費" },
+    { "from": "wafer", "to": "foundry", "fromHandle": "b", "toHandle": "t", "flow": "供應矽晶圓" },
+    { "from": "equipment", "to": "foundry", "fromHandle": "b", "toHandle": "t2", "flow": "供應製造設備" },
+    { "from": "foundry", "to": "osat", "fromHandle": "r", "toHandle": "l", "flow": "晶圓交付封測" },
+    { "from": "osat", "to": "brand", "fromHandle": "r", "toHandle": "l", "flow": "成品晶片出貨" }
+  ]
+}

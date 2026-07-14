@@ -1,0 +1,66 @@
+{
+  "id": "ems",
+  "name": "電子代工",
+  "oneLiner": "毛利率個位數的生意，怎麼賺出全台灣最大的營收與獲利金額",
+  "dataNote": "毛利率為 2025 年約略值，用來理解商業模式，非即時選股數據",
+  "stages": [
+    {
+      "id": "components",
+      "name": "關鍵零組件",
+      "tier": "上游",
+      "role": "供應電源、散熱、被動元件等系統的心臟零件",
+      "howTheyEarn": "賣標準化或客製化的零組件給組裝廠。技術含量越高（如伺服器電源、水冷散熱）、越難被替換，毛利就越好。",
+      "marginStory": "毛利率 30% 上下，是這條鏈上賺錢相對輕鬆的位置——零組件占整機成本比例低，客戶砍價動力較弱，技術門檻卻實在。AI 伺服器的電源與散熱需求暴增，讓這個環節近年最風光。",
+      "companies": [
+        { "ticker": "2308", "name": "台達電", "market": "TW", "grossMargin": 33, "note": "電源供應器全球龍頭，AI 伺服器電源與散熱大贏家" },
+        { "ticker": "2327", "name": "國巨", "market": "TW", "grossMargin": 37, "note": "被動元件龍頭，靠併購擴大版圖" }
+      ],
+      "pos": { "x": 0, "y": 300 }
+    },
+    {
+      "id": "pcb",
+      "name": "PCB / 機構件",
+      "tier": "支援",
+      "role": "供應電路板與金屬機殼等結構件",
+      "howTheyEarn": "按件生產電路板、機殼賣給組裝廠。規格由品牌定，比的是良率、產能與成本控制。",
+      "marginStory": "毛利率約 20–26%。高階板（伺服器、載板）毛利較好，消費性產品則競爭激烈——同樣是 PCB，做 iPhone 板和做伺服器板是兩種命。",
+      "companies": [
+        { "ticker": "4958", "name": "臻鼎-KY", "market": "TW", "grossMargin": 20, "note": "全球 PCB 產值第一" },
+        { "ticker": "2367", "name": "健鼎", "market": "TW", "grossMargin": 26, "note": "伺服器與車用板受惠者" }
+      ],
+      "pos": { "x": 200, "y": 0 }
+    },
+    {
+      "id": "assembly",
+      "name": "系統組裝（EMS/ODM）",
+      "tier": "中游",
+      "role": "把零組件組成整機：手機、筆電、伺服器",
+      "howTheyEarn": "跟品牌收組裝費（EMS）或連設計帶製造一起包（ODM）。單件利潤極薄，靠巨大出貨量與供應鏈管理能力賺錢——本質是「規模 × 週轉」的生意。",
+      "marginStory": "毛利率只有 5–9%，是全網站最薄的環節。但注意：鴻海一年營收 8.1 兆、淨利 1,893 億創歷史新高——每一元賺得薄，架不住量大。另一個反直覺現象：AI 伺服器讓營收暴衝，毛利率反而被稀釋（GPU 成本占比太高），「毛利率下降、獲利創新高」同時發生。",
+      "companies": [
+        { "ticker": "2317", "name": "鴻海", "market": "TW", "grossMargin": 6, "note": "全球最大 EMS，AI 伺服器新引擎" },
+        { "ticker": "2382", "name": "廣達", "market": "TW", "grossMargin": 6, "note": "AI 伺服器出貨王，營收兩年翻倍" },
+        { "ticker": "3231", "name": "緯創", "market": "TW", "grossMargin": 9, "note": "AI 伺服器板卡先行者" }
+      ],
+      "pos": { "x": 430, "y": 300 }
+    },
+    {
+      "id": "brand",
+      "name": "品牌 / 雲端客戶",
+      "tier": "下游",
+      "role": "掛上品牌賣給消費者，或自建資料中心",
+      "howTheyEarn": "品牌商掌握設計、行銷與通路，把代工廠的整機加價賣出；雲端巨頭（Google、Meta 等）則直接向 ODM 下單自用，跳過品牌層。",
+      "marginStory": "蘋果毛利率 46%，跟組裝它產品的鴻海（6%）差了七倍以上——微笑曲線的兩端在這條鏈上一覽無遺：設計與品牌在笑，中間的組裝在苦撐。",
+      "companies": [
+        { "ticker": "AAPL", "name": "蘋果", "market": "US", "grossMargin": 46, "note": "把供應鏈管理變成藝術的品牌商" },
+        { "ticker": "DELL", "name": "戴爾", "market": "US", "grossMargin": 22, "note": "企業端伺服器與 PC 品牌" }
+      ],
+      "pos": { "x": 860, "y": 300 }
+    }
+  ],
+  "edges": [
+    { "from": "components", "to": "assembly", "fromHandle": "r", "toHandle": "l", "flow": "供應零組件" },
+    { "from": "pcb", "to": "assembly", "fromHandle": "b", "toHandle": "t", "flow": "供應電路板與機構件" },
+    { "from": "assembly", "to": "brand", "fromHandle": "r", "toHandle": "l", "flow": "整機出貨，收組裝費" }
+  ]
+}

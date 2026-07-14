@@ -1,0 +1,64 @@
+{
+  "id": "shipping",
+  "name": "航運",
+  "oneLiner": "景氣循環的極致——同一批船，兩年賺回一個股本，也能一年虧掉半個",
+  "dataNote": "航運毛利率隨運價劇烈波動，本頁為 2025 年約略值。2022 年長榮毛利率曾逾 60%，2023 年一度趨近於零——這個產業的數字保鮮期特別短",
+  "stages": [
+    {
+      "id": "shipbuilding",
+      "name": "造船",
+      "tier": "上游",
+      "role": "造一艘船，賣一到兩億美元",
+      "howTheyEarn": "接航商訂單造船，一艘大型貨櫃輪造價上億美元、工期兩三年。景氣好時訂單接到手軟，但交船時景氣可能已反轉——吃的是延遲兩年的循環。",
+      "marginStory": "毛利率極低。全球造船被中國、韓國以規模與補貼壟斷，台船長年在損益邊緣掙扎——同一條供應鏈，有人賺翻，有人連湯都喝不到。",
+      "companies": [
+        { "ticker": "2208", "name": "台船", "market": "TW", "grossMargin": 3, "note": "在中韓夾殺下轉向軍艦與離岸風電" }
+      ],
+      "pos": { "x": 0, "y": 300 }
+    },
+    {
+      "id": "fuel",
+      "name": "船用燃油",
+      "tier": "支援",
+      "role": "燃油是航商最大變動成本之一",
+      "howTheyEarn": "煉油廠把原油煉成船用重油與低硫油賣給航商。跟著油價走，賺煉油價差。",
+      "marginStory": "毛利率個位數，典型的大宗商品生意——量大、價透明、無差異化。航商的獲利對油價敏感，燃油商自己卻賺得很辛苦。",
+      "companies": [
+        { "ticker": "6505", "name": "台塑化", "market": "TW", "grossMargin": 7, "note": "台灣唯一民營煉油廠" }
+      ],
+      "pos": { "x": 240, "y": 0 }
+    },
+    {
+      "id": "carrier",
+      "name": "貨櫃航商",
+      "tier": "中游",
+      "role": "把貨櫃從亞洲運到歐美",
+      "howTheyEarn": "收運費。成本端（船、油、人力）相對固定，運價卻由全球供需決定——艙位緊張時運價可以漲十倍，成本不變，多出來的幾乎全是利潤；反之運價崩盤時虧損也毫無緩衝。教科書級的營業槓桿。",
+      "marginStory": "2025 年毛利率約 15–26%、長榮 ROE 32% 創歷史次高——但這是快照不是體質。航運的毛利率不是護城河，是運價的照妖鏡：看景氣循環股，毛利率的高點往往是股價高點而不是買點。",
+      "companies": [
+        { "ticker": "2603", "name": "長榮", "market": "TW", "grossMargin": 26, "note": "2025 EPS 31.68 元，貨櫃三雄之首" },
+        { "ticker": "2615", "name": "萬海", "market": "TW", "grossMargin": 20, "note": "近洋線為主，波動更劇烈" },
+        { "ticker": "2609", "name": "陽明", "market": "TW", "grossMargin": 15, "note": "官股色彩的貨櫃三雄之一" }
+      ],
+      "pos": { "x": 430, "y": 300 }
+    },
+    {
+      "id": "forwarder",
+      "name": "貨攬 / 物流",
+      "tier": "下游",
+      "role": "幫貨主訂艙位、湊櫃、報關、送到門",
+      "howTheyEarn": "向航商批艙位、轉賣給中小貨主，賺價差與服務費。自己沒有船——輕資產，運價暴漲時跟著賺價差，暴跌時受傷也比航商輕。",
+      "marginStory": "毛利率約 10–12%，但幾乎不需要資本支出，ROE 反而可以不差。再往下游就是 Walmart、Amazon 這些終端貨主——全球消費力才是整條鏈的最終買單者。",
+      "companies": [
+        { "ticker": "5609", "name": "中菲行", "market": "TW", "grossMargin": 12, "note": "空海運承攬，輕資產模式" },
+        { "ticker": "2636", "name": "台驊投控", "market": "TW", "grossMargin": 11, "note": "貨攬起家，跟著運價喝湯" }
+      ],
+      "pos": { "x": 860, "y": 300 }
+    }
+  ],
+  "edges": [
+    { "from": "shipbuilding", "to": "carrier", "fromHandle": "r", "toHandle": "l", "flow": "交船（一艘上億美元）" },
+    { "from": "fuel", "to": "carrier", "fromHandle": "b", "toHandle": "t", "flow": "供應船用燃油" },
+    { "from": "carrier", "to": "forwarder", "fromHandle": "r", "toHandle": "l", "flow": "賣艙位" }
+  ]
+}

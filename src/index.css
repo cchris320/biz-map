@@ -1,0 +1,47 @@
+:root {
+  /* 深色主題（參考色板 dark 值） */
+  --page: #0d0d0d;
+  --surface: #1a1a19;
+  --surface-2: #222221;
+  --ink: #ffffff;
+  --ink-2: #c3c2b7;
+  --ink-muted: #898781;
+  --hairline: #2c2c2a;
+  --border: rgba(255, 255, 255, 0.1);
+  --accent: #3987e5;
+  --money: #c98500; /* 金流圓點 */
+
+  font-family: 'Noto Sans TC', 'Microsoft JhengHei', system-ui, -apple-system,
+    'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: var(--ink-2);
+  background: var(--page);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--ink);
+  margin: 0;
+}
