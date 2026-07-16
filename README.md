@@ -3,6 +3,8 @@
 > 一個把「產業怎麼賺錢」與「股價為什麼漲」講清楚的互動網站。
 > 定位刻意選在難的一邊：**描述位置、不做預測。**
 
+![半導體供應鏈互動地圖](docs/screenshots/industry_semiconductor.png)
+
 ## 這是什麼
 
 市面上的投資網站大致分兩種：賣訊號的，和只攤數據的。這個網站兩者都不是——
@@ -14,11 +16,21 @@
 4. **極端會長怎樣** — 泡沫博物館：七場歷史泡沫，同一套「泡沫五問」解剖框架。
 5. **現在站在哪裡** — 市場溫度計 + 情境計算機，讓使用者在進場前先量自己的位置與風險。
 
+| 公司金流桑基圖（台積電） | 泡沫博物館（網路泡沫） |
+| :---: | :---: |
+| ![台積電損益桑基圖](docs/screenshots/company_2330.png) | ![網路泡沫拆解](docs/screenshots/bubble_dotcom.png) |
+
+| 首頁 | 市場溫度計 |
+| :---: | :---: |
+| ![首頁](docs/screenshots/home.png) | ![市場溫度計](docs/screenshots/thermometer.png) |
+
 ## 設計理念
 
 - **不預測方向**：所有工具只描述「你買的價格內建了哪些假設、假設鬆動的代價是幾成」，把判斷留給使用者。
 - **一致性由架構保證**：公司財報只存 5 個原始輸入（revenue / cogs / rd / sga / taxAndOther），
   毛利、營益、淨利全部由程式推導，杜絕手動填數字的矛盾。
+  這條不變量由 `npm run validate` 機器強制（build 前自動跑）：多存一個衍生欄位、推導鏈出現負值、
+  edges 指到不存在的 stage，build 直接失敗。
 - **資料驅動**：每個產業／公司／案例／泡沫都是一個 JSON。新增內容 = 加一個 JSON + 在 `src/data/index.js` import，不動元件。
 
 ## 技術
@@ -48,8 +60,9 @@ src/
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
-npm run build    # 產出 dist/
+npm run dev       # http://localhost:5173
+npm run validate  # 資料一致性檢查（P&L 推導鏈、參照完整性）
+npm run build     # validate + 產出 dist/
 ```
 
 ## 現況
